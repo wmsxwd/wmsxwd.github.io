@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>wmsxwd｜2026 新春活动公告</title>
+  <meta name="description" content="wmsxwd 2026 新春优惠：全场 8 折 + 额外抽奖返余额。活动时间：2026-02-01 至 2026-03-03。" />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --text:#eaf0ff;
+      --muted: rgba(234,240,255,.75);
+      --line: rgba(234,240,255,.14);
+      --accent:#7c5cff;
+      --accent2:#22c55e;
+      --warn:#f59e0b;
+      --danger:#ef4444;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 22px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(124,92,255,.35), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(34,197,94,.18), transparent 55%),
+        radial-gradient(900px 500px at 90% 80%, rgba(245,158,11,.12), transparent 55%),
+        linear-gradient(180deg, #070a14 0%, #0b1020 35%, #0b1020 100%);
+      min-height:100vh;
+      line-height:1.65;
+      letter-spacing:.2px;
+    }
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+    header{
+      padding:24px 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    header:before{
+      content:"";
+      position:absolute;
+      inset:-80px -120px auto auto;
+      width:280px;height:280px;
+      background: radial-gradient(circle at 30% 30%, rgba(124,92,255,.55), transparent 65%);
+      filter: blur(2px);
+    }
+    header:after{
+      content:"";
+      position:absolute;
+      inset:auto auto -120px -120px;
+      width:320px;height:320px;
+      background: radial-gradient(circle at 35% 35%, rgba(34,197,94,.30), transparent 65%);
+      filter: blur(2px);
+    }
+    .brand{
+      position:relative;
+      z-index:1;
+      display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+    }
+    .title{
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .title h1{
+      font-size:28px; margin:0;
+      letter-spacing:.4px;
+    }
+    .title p{margin:0;color:var(--muted);font-size:14px}
+    .pillrow{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(124,92,255,.18);
+      border:1px solid rgba(124,92,255,.35);
+      color: var(--text);
+      font-size:13px;
+      position:relative;
+      z-index:1;
+      user-select:none;
+    }
+    .pill.green{background: rgba(34,197,94,.14); border-color: rgba(34,197,94,.28)}
+    .pill.warn{background: rgba(245,158,11,.14); border-color: rgba(245,158,11,.28)}
+    .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-top:16px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:16px 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+    }
+    .card h2{margin:0 0 10px;font-size:18px}
+    .card h3{margin:16px 0 8px;font-size:15px;color:rgba(234,240,255,.92)}
+    .muted{color:var(--muted)}
+    .hr{height:1px;background:var(--line);margin:14px 0}
+    .highlight{
+      background: rgba(255,255,255,.06);
+      border: 1px dashed rgba(234,240,255,.24);
+      border-radius: 14px;
+      padding:12px 12px;
+    }
+    .reason{
+      display:flex;gap:10px;align-items:flex-start
+    }
+    .badge{
+      flex:0 0 auto;
+      width:34px;height:34px;border-radius:12px;
+      display:grid;place-items:center;
+      background: rgba(245,158,11,.14);
+      border:1px solid rgba(245,158,11,.28);
+    }
+    .badge svg{width:18px;height:18px;fill:var(--warn)}
+    .cta{
+      display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px
+    }
+    .btn{
+      appearance:none;border:0;cursor:pointer;
+      padding:10px 12px;border-radius:12px;
+      background: rgba(124,92,255,.22);
+      border:1px solid rgba(124,92,255,.40);
+      color: var(--text);
+      font-weight:600;
+      display:inline-flex;gap:8px;align-items:center;
+      transition: transform .08s ease, background .2s ease;
+    }
+    .btn:hover{background: rgba(124,92,255,.28)}
+    .btn:active{transform: translateY(1px)}
+    .btn.secondary{background: rgba(255,255,255,.06);border-color: rgba(234,240,255,.18);font-weight:500}
+    .codebox{
+      display:flex;gap:10px;align-items:center;justify-content:space-between;
+      padding:12px 12px;border-radius:14px;
+      background: rgba(0,0,0,.20);
+      border:1px solid rgba(234,240,255,.18);
+      margin-top:10px;
+    }
+    .code{
+      font-family: var(--mono);
+      font-size:14px;
+      letter-spacing:.4px;
+      color: rgba(234,240,255,.95);
+      user-select:all;
+    }
+    .small{font-size:13px}
+    ul{margin:8px 0 0 18px;color:rgba(234,240,255,.90)}
+    li{margin:6px 0}
+    .steps{counter-reset:step}
+    .steps li{list-style:none;position:relative;margin-left:0;padding-left:30px}
+    .steps li:before{
+      counter-increment:step; content: counter(step);
+      position:absolute; left:0; top:2px;
+      width:22px;height:22px;border-radius:8px;
+      display:grid;place-items:center;
+      font-size:12px;font-weight:700;
+      background: rgba(34,197,94,.16);
+      border:1px solid rgba(34,197,94,.32);
+      color: rgba(234,240,255,.95);
+    }
+    .table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid rgba(234,240,255,.14);
+      background: rgba(255,255,255,.04);
+      margin-top:10px;
+    }
+    .table th,.table td{
+      padding:10px 10px;
+      border-bottom:1px solid rgba(234,240,255,.10);
+      vertical-align:top;
+      font-size:13px;
+    }
+    .table th{
+      text-align:left;
+      color: rgba(234,240,255,.88);
+      background: rgba(255,255,255,.04);
+      font-weight:600;
+    }
+    .table tr:last-child td{border-bottom:0}
+    footer{
+      margin-top:18px;
+      color: rgba(234,240,255,.70);
+      font-size:12px;
+      text-align:center;
+    }
+    .ok{color: rgba(34,197,94,.95)}
+    .note{color: rgba(245,158,11,.95)}
+    .danger{color: rgba(239,68,68,.95)}
+    .k{font-family:var(--mono);font-size:12px;color:rgba(234,240,255,.9)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="title">
+          <h1>2026 新春优惠活动公告</h1>
+          <p>提前开启 · 8 折优惠码 + 活动期抽奖返余额</p>
+        </div>
+        <div class="pillrow">
+          <div class="pill warn">活动时间：2026-02-01 00:00 ～ 2026-03-03 24:00</div>
+          <div class="pill green">优惠力度：全场 8 折</div>
+        </div>
+      </div>
+      <div class="grid" style="position:relative;z-index:1;">
+        <section class="card">
+          <h2>为什么要提前开启？</h2>
+          <div class="highlight reason">
+            <div class="badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:650;">为了照顾“提前到期”的用户，避免活动开始前无法续费。</div>
+              <div class="muted small" style="margin-top:6px;">
+                由于上一年度存在闰月，导致部分用户的会员到期时间相对提前。我们将活动 <span class="note">提前开启</span>，
+                让这部分用户也能在到期前顺利续费/升级，不影响使用体验。
+              </div>
+              <div class="muted small" style="margin-top:6px;">
+                * 活动执行时间可能存在 <span class="note">约 5 分钟</span> 的系统误差，属于正常现象。
+              </div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <h2>活动一：阳光普照 · 全场 8 折</h2>
+          <div class="codebox" role="group" aria-label="优惠码">
+            <div>
+              <div class="muted small">优惠码（结算时填写）</div>
+              <div class="code" id="coupon">wmsxwd2026</div>
+            </div>
+            <button class="btn" id="copyBtn" type="button">一键复制</button>
+          </div>
+
+          <h3>使用方式</h3>
+          <table class="table" aria-label="优惠码使用细则">
+            <thead>
+              <tr>
+                <th style="width:25%;">站点</th>
+                <th style="width:37%;">新购 / 同等级续费</th>
+                <th>跨等级升级 / 续费说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div style="font-weight:650;">新站（数字站）</div>
+                  <div class="k">wmsxwd-3.men</div>
+                </td>
+                <td>无需工单，直接使用优惠码即可</td>
+                <td>跨等级升级：请提前发送工单，客服将引导您操作</td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="font-weight:650;">旧站（字母站）</div>
+                  <div class="k">b.wmsxwd-j.men</div>
+                </td>
+                <td>新购：无需工单，直接使用优惠码即可</td>
+                <td>续费：请先充值余额并提交工单，我们将在 <b>72 小时</b> 内完成扣款并续期（期间请勿自行变更套餐；如超过 72 小时仍未完成，可发送新工单催单）</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="hr"></div>
+
+          <h2>活动二：额外抽奖 · 返余额</h2>
+          <div class="muted small">活动时间：2026-02-01 00:00 ～ 2026-03-03 24:00</div>
+          <ul>
+            <li>活动期间购买套餐的订单，<b>每日抽取 10%</b> 订单，额外赠送 <b>6 元余额</b>。</li>
+            <li>若您自 <b>2025-01-01</b> 以来一直保持 VIP 套餐不中断，奖励将提升至 <b>26 元余额</b>（高等级 VIP 奖励 <b>36 元</b>）。</li>
+            <li>补偿将在活动结束后 <b>14 个工作日</b> 内全部发放完毕，请耐心等待。</li>
+          </ul>
+        </section>
+
+        <aside class="card">
+          <h2>推荐使用官方客户端</h2>
+          <div class="muted small">为了获得更稳定、更完整的体验，建议优先使用我们的官方客户端：</div>
+          <div class="cta" style="margin-top:12px;">
+            <span class="pill">Windows</span>
+            <span class="pill">macOS</span>
+            <span class="pill">Android</span>
+            <span class="pill">iOS</span>
+          </div>
+          <div class="muted small" style="margin-top:10px;">
+            官方客户端通常在订阅解析、分流、TUN/系统代理切换、兼容性提示等方面更完善，减少“导入失败/配置不生效/兼容问题”等情况。
+          </div>
+
+          <div class="hr"></div>
+
+          <h2>老站点（字母站）规则说明（续费流量计算）</h2>
+          <div class="highlight">
+            <div class="small"><b>时间叠加：</b>同等级续费直接延长套餐时长</div>
+            <div class="small" style="margin-top:8px;">
+              <b>流量叠加：</b>对比「剩余时间对应流量」与「实际剩余流量」，取<b>较小值</b>进行叠加
+            </div>
+          </div>
+
+          <h3>示例</h3>
+          <ul>
+            <li>小明：包年 365G，剩余 1 天，余量 300G → 按 <b>365G/365天=1G</b> 叠加</li>
+            <li>小红：包年 365G，剩余 300 天，余量 1G → 按 <b>1G</b> 叠加</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h2>人工操作提示</h2>
+          <ul class="steps">
+            <li>工单续费/升级将于 <b>72 小时</b> 内处理完成</li>
+            <li>处理期间请勿自行变更套餐，避免重复/异常</li>
+            <li>如支付或站点出现问题，请提交工单并耐心等待</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h2>祝福</h2>
+          <div class="muted small">
+            感谢各位老板一直以来的支持与理解，愿大家新年快乐，万事顺遂！<br/>
+            —— wmsxwd
+          </div>
+
+          <div class="hr"></div>
+
+          <h2>系统状态</h2>
+          <div class="muted small">如遇波动/维护，可查看状态页：</div>
+          <div class="cta">
+            <a class="btn secondary" href="https://status.wmsxwd.uk/" target="_blank" rel="noopener">打开状态页面</a>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <footer>
+      <div>©wmsxwd 2026</div>
+    </footer>
+  </div>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('copyBtn');
+      var coupon = document.getElementById('coupon');
+      if(!btn || !coupon) return;
+
+      btn.addEventListener('click', async function(){
+        var text = coupon.textContent.trim();
+        try{
+          await navigator.clipboard.writeText(text);
+          btn.textContent = '已复制';
+          setTimeout(function(){ btn.textContent = '一键复制'; }, 1200);
+        }catch(e){
+          // Fallback
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly','');
+          ta.style.position='absolute';
+          ta.style.left='-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          try{
+            document.execCommand('copy');
+            btn.textContent = '已复制';
+            setTimeout(function(){ btn.textContent = '一键复制'; }, 1200);
+          }catch(_){
+            alert('复制失败，请手动复制：' + text);
+          }
+          document.body.removeChild(ta);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
